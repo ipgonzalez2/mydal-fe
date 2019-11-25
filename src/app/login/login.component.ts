@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../shared/models/user.model';
+import { UsersService } from '../shared/services/users.service';
 
 @Component({
   selector: 'app-login',
@@ -6,18 +8,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  public email: string;
-  public password: string;
+  public user: User;
+  public register: boolean;
 
-  constructor() { }
+  constructor(private usersService:UsersService) { }
 
   ngOnInit() {
-    this.email = '';
-    this.password = '';
+    this.register = false;
+    this.user=new User(); 
   }
 
   public login(){
-    console.log(this.email);
-    console.log(this.password);
+    console.log(this.user);
+
+  }
+
+  public registerUser(){
+    console.log(this.user);
+    this.usersService.registerUser(this.user).subscribe(
+      d=>{
+          console.log(d);
+      },
+      e=>console.error(e)
+    );
+
   }
 }

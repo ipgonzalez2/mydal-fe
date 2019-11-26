@@ -15,4 +15,8 @@ export class UsersService {
   registerUser(user:User):Observable<any> {
     return this.http.post(environment.apiUrl+'users/register',user);
   }
+
+  loginUser(user:User):Observable<any> {
+    return this.http.post(environment.apiUrl+'users/login',user);
+  }
 }

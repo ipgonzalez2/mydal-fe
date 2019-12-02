@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../shared/models/user.model';
-import { UsersService } from '../shared/services/users.service';
+import { Folder } from '../shared/models/folder.model';
+import { FolderService } from '../shared/services/folder.service';
+import { Router, ActivatedRoute } from '@angular/router';;
 
 @Component({
   selector: 'app-left-menu',
@@ -8,13 +9,22 @@ import { UsersService } from '../shared/services/users.service';
   styleUrls: ['./left-menu.component.scss']
 })
 export class LeftMenuComponent implements OnInit {
-  public user: User;
-
-  constructor(private usersService:UsersService) { }
-
-  ngOnInit() {
-    //this.user=new User();
-    //En el anterior tenemos que llamar al usuario de la sesión
-  }
+  foldersArray : Folder[];
+  
+    constructor(private folderService : FolderService) { 
+      this.foldersArray = [];
+    }
+  
+    ngOnInit() {
+      this.folderService.getFolders().subscribe(
+        data=> this.foldersArray = data["response"]
+      );
+      console.log(this.foldersArray);
+    }
 
 }
+
+
+
+
+

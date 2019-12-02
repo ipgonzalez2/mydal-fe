@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Folder } from '../shared/models/folder.model';
 import { FolderService } from '../shared/services/folder.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -11,6 +11,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class FolderComponent implements OnInit {
   folders : Folder;
+  @Input() name : string;
 
   constructor() { 
     this.folders = new Folder;

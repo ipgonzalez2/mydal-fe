@@ -53,9 +53,7 @@
         <div class="row">           
             <!-- Aqui van las carpetas-->
             <div class="col-4 col-sm-3 col-md-3 col-lg-2 col-xl-2 mt-3" *ngFor="let folder of foldersArray">
-                <app-folder></app-folder>
-                
-                
+                <app-folder [name]="folder.NOMBRE" (click)="changeId(folder.ID_CARPETA)"></app-folder>                
             </div>
             
             <!-- Aqui van los-->
@@ -69,3 +67,31 @@
 
     </div><!-- Main Col END -->
 </div><!-- body-row END -->
+
+<!-- MODAL CREAR CARPETA-->
+<div class=" modal fade" id="modalCreateFolder" tabindex="-1" role="dialog" aria-labelledby="createFolderTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered " role="document">
+        <div class="col-9 px-0 mx-auto modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="createFolderTitle">Crea una carpeta</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <form method="POST" action="index.php?controller=folders&action=addFolder">
+                <div class="mx-auto cuerpoModal cuerpoModal modal-body">
+                    <p>Introduce el nombe de la carpeta</p>
+                    <div class="col-10 mx-auto"><input class="inputModal" name="name" type="text" class="col-12" placeholder="Nombre">
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary">Crear carpeta</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

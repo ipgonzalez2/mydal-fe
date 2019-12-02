@@ -1,15 +1,16 @@
 export class Folder {
-    id?: number;
-    name: string;
-    owner: number;
-    father: number;
+    ID_CARPETA?: number;
+    NOMBRE: string;
+    PROPIETARIO: number;
+    PADRE: number;
 
     constructor(id = null, name = null, owner = null, father = null){
-        this.id = id;
-        this.name = name;
-        this.owner = owner;
-        this.father= father;
+        this.ID_CARPETA = id;
+        this.NOMBRE = name;
+        this.PROPIETARIO = owner;
+        this.PADRE= father;
     }
+    
 
     
 }

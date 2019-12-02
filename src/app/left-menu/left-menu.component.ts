@@ -10,16 +10,29 @@ import { Router, ActivatedRoute } from '@angular/router';;
 })
 export class LeftMenuComponent implements OnInit {
   foldersArray : Folder[];
+  currentFolderId:number;
   
     constructor(private folderService : FolderService) { 
-      this.foldersArray = [];
     }
-  
+    
     ngOnInit() {
-      this.folderService.getFolders().subscribe(
+      this.foldersArray = [];
+      this.currentFolderId=null;
+
+      this.refreshFolders();
+    }
+
+    refreshFolders(){
+      this.folderService.getFolders(this.currentFolderId)
+      .subscribe(
         data=> this.foldersArray = data["response"]
       );
-      console.log(this.foldersArray);
+    }
+
+    changeId(id:number){
+      this.currentFolderId = id;
+      this.refreshFolders();
+
     }
 
 }

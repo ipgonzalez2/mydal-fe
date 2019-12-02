@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../shared/models/user.model';
 import { UsersService } from '../shared/services/users.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AuthenticationService } from '../shared/services/authentication.service';
 
 
 @Component({
@@ -14,7 +15,10 @@ export class LoginComponent implements OnInit {
   public register: boolean;
   public url: string;
 
-  constructor(private usersService:UsersService, private router: Router, private route: ActivatedRoute) { 
+  constructor(private usersService:UsersService, 
+    private router: Router, 
+    private route: ActivatedRoute,
+    private auth:AuthenticationService) { 
     
     this.route.queryParams.subscribe(
       data => {
@@ -36,7 +40,7 @@ export class LoginComponent implements OnInit {
 
   public login(){
     console.log(this.user);
-    this.usersService.loginUser(this.user).subscribe(
+    this.auth.login(this.user.email,this.user.password).subscribe(
       d=>{
           console.log(d);
           this.register = true;

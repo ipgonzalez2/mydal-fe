@@ -7,12 +7,22 @@ import { LoginComponent } from './login/login.component';
 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { LeftMenuComponent } from './left-menu/left-menu.component';
+import { ShowAllComponent } from './show-all/show-all.component';
+import { FolderComponent } from './folder/folder.component';
+import { FileComponent } from './file/file.component';
+import { TopMenuComponent } from './top-menu/top-menu.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    LeftMenuComponent,
+    ShowAllComponent,
+    FolderComponent,
+    FileComponent,
+    TopMenuComponent
   ],
   imports: [
     BrowserModule,

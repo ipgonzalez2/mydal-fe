@@ -1,0 +1,68 @@
+.fold{
+    margin: auto;
+    height: 100px;
+    width: 100px;
+  }
+  
+  .titulo{
+    text-align: center;
+    padding: none;
+  }
+  .card-body{
+    padding: none;
+  }
+  
+  .card{
+    border: none;
+  }
+  
+  .opcionescarpeta{
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 10px;
+    background-color: #343a40;
+    display:none;
+    position: absolute;
+    z-index: 100;
+  }
+  
+  .opcionesfichero{
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 10px;
+    background-color: #343a40;
+    display:none;
+    position: absolute;
+    z-index: 100;
+  }
+  
+  
+  .menu_simple ul {
+    border-radius: 10px;
+    margin: 0;
+    padding: 0;
+    width:185px;
+    list-style-type: none;
+  }
+    
+  
+  .menu_simple ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10.5px 11px;
+    border-radius: 10px;
+    display:block;    
+  }
+    
+     
+    
+  .menu_simple ul li a:visited {
+    color: white;  
+    border-radius: 10px;
+  }
+    
+     
+    
+  .menu_simple ul li a:hover, .menu_simple ul li .current {
+    color: white;
+    background-color: #1d2124;
+    border-radius: 10px;
+  }

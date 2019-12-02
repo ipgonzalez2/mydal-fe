@@ -1,0 +1,84 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+
+    <!--Logotipo -->
+    <a class=" logotipo ml-4 navbar-brand" href="#">
+        <span class="menu-collapsed"><i class="fa fa-folder-open"></i></span>
+            <span class="menu-collapsed">Mydal</span>
+    </a>
+
+    <!--Boton que se hace visible al redimensionar-->
+    <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse"
+        data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!--Menú del boton que aparece al redimensionarse -->
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+
+            <!-- MENU DEL USUARIO -->
+            <li class="nav-item dropdown d-sm-block d-md-none">
+                <a class="nav-link dropdown-toggle" href="#" id="smallerscreenmenuLogin" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <span class="menu-collapsed mr-2"><i class="fa fa-user"></i></span>
+                    <span class="menu-collapsed">Usuario</span>
+                </a>
+
+                <!-- SUBMENU DEL USUARIO -->
+                <div class="dropdown-menu" aria-labelledby="smallerscreenmenuLogin">
+                    <a class="dropdown-item" href="#">Mi cuenta</a>
+                    <a class="dropdown-item" href="./index.php?controller=users&action=logout">Cerrar sesión</a>
+                </div>
+            </li>
+
+            <!-- MENU DEL IDIOMA -->
+            <li class="nav-item dropdown d-sm-block d-md-none">
+                <a class="nav-link dropdown-toggle" href="#" id="smallerscreenmenuIdioma" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <span class="menu-collapsed mr-2"><i class="fa fa-globe"></i></span>
+                    <span class="menu-collapsed">Idioma</span>
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="smallerscreenmenuIdioma">
+                    <a class="dropdown-item" href="#">Inglés</a>
+                    <a class="dropdown-item" href="#">Español</a>
+                    <a class="dropdown-item" href="#">Gallego</a>
+                </div>
+            </li>
+
+            <!-- OPCION DE CREAR CARPETA -->
+            <li class="nav-item dropdown d-sm-block d-md-none">
+                <a class="nav-link" href="#" data-toggle="modal" data-target="#modalCreateFolder">
+                    <span class="menu-collapsed mr-2"><i class="fa fa-folder"></i></span>
+                    <span class="menu-collapsed">Crear carpeta</span>
+                </a>
+            </li>
+
+            <!-- OPCION DE CREAR Fichero -->
+            <li class="nav-item dropdown d-sm-block d-md-none">
+                <a class="nav-link" href="#" data-toggle="modal" data-target="#modalUploadFile">
+                    <span class="menu-collapsed mr-2"><i class="fa fa-file"></i></span>
+                    <span class="menu-collapsed">Crear fichero</span>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+
+    <!-- BOTON LOGIN MARGEN SUPERIOR DERECHO-->
+    <ul class=" d-none d-md-block navbar-nav ml-5 mt-2 mt-lg-0 ">
+        <li class="nav-item dropdown">
+            <a class="nav-link" href="#" id="smallerscreenmenuLogin" aria-haspopup="true" aria-expanded="false"
+                data-toggle="dropdown">
+                <span class="menu-collapsed mr-2"><i class="fa fa-user"></i></span>
+                <span class="menu-collapsed">Usuario</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="smallerscreenmenuLogin">
+                <a class="dropdown-item" href="#">Mi cuenta</a>
+                <a class="dropdown-item" href="#">Cerrar sesión</a>
+            </div>
+        </li>
+    </ul>
+
+</nav>

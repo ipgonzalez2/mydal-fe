@@ -1,0 +1,18 @@
+
+
+    <div class="row">           
+        <!-- Aqui van las carpetas-->
+        <div class="col-4 col-sm-3 col-md-3 col-lg-2 col-xl-2 mt-3" *ngFor="let folder of foldersArray">
+            <app-folder [name]="folder.NOMBRE" (click)="changeId(folder.ID_CARPETA)"></app-folder>                
+        </div>
+        
+        <!-- Aqui van los-->
+        <div class="col-4 col-sm-3 col-md-3 col-lg-2 col-xl-2 mt-3">
+            <app-file></app-file>
+        </div>
+        
+        
+    </div>
+
+
+

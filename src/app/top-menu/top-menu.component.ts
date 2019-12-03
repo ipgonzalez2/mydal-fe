@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../shared/models/user.model';
+import { AuthenticationService } from '../shared/services/authentication.service';
 
 @Component({
   selector: 'app-top-menu',
@@ -8,10 +9,14 @@ import { User } from '../shared/models/user.model';
 })
 export class TopMenuComponent implements OnInit {
 public user:User;
-  constructor() { }
+  constructor(private auth:AuthenticationService) { }
 
   ngOnInit() {
     this.user=JSON.parse(localStorage.getItem('currentUser'));
+  }
+  
+  logout(){
+    this.auth.logout();
   }
 
 }

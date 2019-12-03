@@ -12,6 +12,7 @@ import { ShowAllComponent } from './show-all/show-all.component';
 import { FolderComponent } from './folder/folder.component';
 import { FileComponent } from './file/file.component';
 import { TopMenuComponent } from './top-menu/top-menu.component';
+import { CenterLayoutComponent } from './center-layout/center-layout.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { TopMenuComponent } from './top-menu/top-menu.component';
     ShowAllComponent,
     FolderComponent,
     FileComponent,
-    TopMenuComponent
+    TopMenuComponent,
+    CenterLayoutComponent
   ],
   imports: [
     BrowserModule,

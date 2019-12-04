@@ -9,6 +9,8 @@ import { environment } from '../../environments/environment';
 
 const URL = environment.apiUrl+'file/';
 
+
+
 @Component({
   selector: 'app-left-menu',
   templateUrl: './left-menu.component.html',
@@ -16,21 +18,29 @@ const URL = environment.apiUrl+'file/';
 })
 export class LeftMenuComponent implements OnInit {
 
+  constructor(private folderService : FolderService, private toastr: ToastrService) { 
+    
+  }
   public uploader: FileUploader = new FileUploader({
     url: URL,
-    itemAlias: 'image'
-  });
-
-  
-    constructor(private folderService : FolderService, private toastr: ToastrService) { 
-    }
+    itemAlias: 'image',
+    headers: [{
+      name: "userEmail",
+      value: JSON.parse(localStorage.getItem("currentUser")).email,
+      },
+      {
+        name: "userId",
+        value: JSON.parse(localStorage.getItem("currentUser")).id,
+      },
+    {
+      name: 'Authorization',
+      value: 'Bearer ' + JSON.parse(localStorage.getItem("currentUser")).jwt
+  }]});
     
     ngOnInit() {
-      console.log("ines");
+      console.log(JSON.parse(localStorage.getItem('currentUser')).email);
       this.uploader.onAfterAddingFile = (file) => {
         file.withCredentials = false;
-        this.uploader["itemAlias"] = file._file.name;
-        console.log(this.uploader["itemAlias"]);
       };
       this.uploader.onCompleteItem = (item: any, status: any) => {
         console.log('Uploaded File Details:', item);

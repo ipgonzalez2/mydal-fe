@@ -12,7 +12,13 @@ import { ShowAllComponent } from './show-all/show-all.component';
 import { FolderComponent } from './folder/folder.component';
 import { FileComponent } from './file/file.component';
 import { TopMenuComponent } from './top-menu/top-menu.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 import { CenterLayoutComponent } from './center-layout/center-layout.component';
+import { CommonModule } from '@angular/common';
+
+import { FileSelectDirective } from 'ng2-file-upload';
 
 
 @NgModule({
@@ -24,13 +30,17 @@ import { CenterLayoutComponent } from './center-layout/center-layout.component';
     FolderComponent,
     FileComponent,
     TopMenuComponent,
-    CenterLayoutComponent
+    CenterLayoutComponent,
+    FileSelectDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(),
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

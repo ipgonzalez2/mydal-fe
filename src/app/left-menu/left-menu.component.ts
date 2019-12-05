@@ -18,6 +18,7 @@ const URL = environment.apiUrl+'file/';
 })
 export class LeftMenuComponent implements OnInit {
   folder :Folder;
+  folders : Folder[];
 
   constructor(private folderService : FolderService, private toastr: ToastrService) { 
     
@@ -39,7 +40,10 @@ export class LeftMenuComponent implements OnInit {
   }]});
     
     ngOnInit() { 
+
       this.folder = new Folder();
+      this.folders = [];
+      this.refresh();
       console.log(JSON.parse(localStorage.getItem('currentUser')).email);
       this.uploader.onAfterAddingFile = (file) => {
         file.withCredentials = false;
@@ -48,6 +52,14 @@ export class LeftMenuComponent implements OnInit {
         console.log('Uploaded File Details:', item);
         this.toastr.success('File successfully uploaded!');
       };
+      
+    }
+
+    refresh(){
+      this.folderService.getFolderCreate()
+      .subscribe(
+        data=> this.folders = data["response"]
+      );
     }
 
     createFolder(){
@@ -56,6 +68,10 @@ export class LeftMenuComponent implements OnInit {
             console.log(d);
         },
         e=>console.error(e)
+      );
+      this.folderService.getFolderCreate()
+      .subscribe(
+        data=> this.folders = data["response"]
       );
 
     }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Folder } from '../shared/models/folder.model';
 import { FolderService } from '../shared/services/folder.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -12,15 +12,16 @@ import { FileService } from '../shared/services/file.service';
 })
 export class CenterLayoutComponent implements OnInit {
 
-  foldersArray : Folder[];
   currentFolderId:number;
   filesArray : File[];
+  @Input() folders : Folder[];
+  
   
     constructor(private folderService : FolderService, private fileService : FileService) { 
+
     }
     
     ngOnInit() {
-      this.foldersArray = [];
       this.currentFolderId=null;
 
       this.refreshFolders();
@@ -30,7 +31,7 @@ export class CenterLayoutComponent implements OnInit {
     refreshFolders(){
       this.folderService.getFolders(this.currentFolderId)
       .subscribe(
-        data=> this.foldersArray = data["response"]
+        data=> this.folders = data["response"]
       );
     }
 
@@ -44,6 +45,7 @@ export class CenterLayoutComponent implements OnInit {
     changeId(id:number){
       this.currentFolderId = id;
       this.refreshFolders();
+      this.refreshFiles();
 
     }
 

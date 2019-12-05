@@ -32,4 +32,8 @@ export class FileService {
     this.idFolder = id;
     return this.http.get<File[]>(environment.apiUrl+'file/'+this.idFolder, { headers: this.headers });
   }
+
+  getFilesCreate() {
+    return this.http.get<File[]>(environment.apiUrl+'file/'+this.idFolder, { headers: this.headers });
+  }
 }

@@ -1,9 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Folder } from '../shared/models/folder.model';
 import { FolderService } from '../shared/services/folder.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { File } from '../shared/models/file.model';
 import { FileService } from '../shared/services/file.service';
+import { CenterLayoutService } from '../shared/services/center-layout.service'
 
 @Component({
   selector: 'app-center-layout',
@@ -17,7 +18,7 @@ export class CenterLayoutComponent implements OnInit {
   @Input() folders : Folder[];
   
   
-    constructor(private folderService : FolderService, private fileService : FileService) { 
+    constructor(private folderService : FolderService, private fileService : FileService, private centerService : CenterLayoutService) { 
 
     }
     
@@ -44,6 +45,7 @@ export class CenterLayoutComponent implements OnInit {
 
     changeId(id:number){
       this.currentFolderId = id;
+      this.centerService.setIdFolder(this.currentFolderId);
       this.refreshFolders();
       this.refreshFiles();
 

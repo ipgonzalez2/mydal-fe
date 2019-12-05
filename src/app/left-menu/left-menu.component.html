@@ -61,18 +61,18 @@
                 </button>
             </div>
 
-            <form method="POST" action="index.php?controller=folders&action=addFolder">
+            <div  >
                 <div class="mx-auto cuerpoModal cuerpoModal modal-body">
                     <p>Introduce el nombe de la carpeta</p>
-                    <div class="col-10 mx-auto"><input class="inputModal" name="name" type="text" class="col-12" placeholder="Nombre">
+                    <div class="col-10 mx-auto"><input class="inputModal col-12" type="text" placeholder="Nombre" [(ngModel)]="folder.NOMBRE">
                     </div>
 
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="submit" class="btn btn-primary">Crear carpeta</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" (click)='createFolder()'>Crear carpeta</button>
                 </div>
-            </form>
+            </div>
 
         </div>
     </div>

@@ -17,6 +17,7 @@ const URL = environment.apiUrl+'file/';
   styleUrls: ['./left-menu.component.scss']
 })
 export class LeftMenuComponent implements OnInit {
+  folder :Folder;
 
   constructor(private folderService : FolderService, private toastr: ToastrService) { 
     
@@ -37,7 +38,8 @@ export class LeftMenuComponent implements OnInit {
       value: 'Bearer ' + JSON.parse(localStorage.getItem("currentUser")).jwt
   }]});
     
-    ngOnInit() {
+    ngOnInit() { 
+      this.folder = new Folder();
       console.log(JSON.parse(localStorage.getItem('currentUser')).email);
       this.uploader.onAfterAddingFile = (file) => {
         file.withCredentials = false;
@@ -46,6 +48,16 @@ export class LeftMenuComponent implements OnInit {
         console.log('Uploaded File Details:', item);
         this.toastr.success('File successfully uploaded!');
       };
+    }
+
+    createFolder(){
+      this.folderService.createFolder(this.folder).subscribe(
+        d=>{
+            console.log(d);
+        },
+        e=>console.error(e)
+      );
+
     }
 
     

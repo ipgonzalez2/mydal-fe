@@ -21,7 +21,7 @@ export class FolderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.modal = false;
+    console.log(this.fold);
 
   }
 

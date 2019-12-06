@@ -13,7 +13,7 @@ import { FileService } from '../shared/services/file.service';
 export class CenterLayoutComponent implements OnInit {
 
   currentFolderId:number;
-  @Input() filesArray : File[];
+  @Input() files : File[];
   @Input() folders : Folder[];
   oldFolder :Folder;
   auxfolder : Folder[];
@@ -25,8 +25,6 @@ export class CenterLayoutComponent implements OnInit {
     ngOnInit() {
       this.currentFolderId=null;
       this.auxfolder = [];
-      this.refreshFolders();
-      this.refreshFiles();
       this.oldFolder = new Folder;
     }
 
@@ -40,7 +38,7 @@ export class CenterLayoutComponent implements OnInit {
     refreshFiles(){
       this.fileService.getFiles(this.currentFolderId)
       .subscribe(
-        data=> this.filesArray = data["response"]
+        data=> this.files = data["response"]
       );
     }
 

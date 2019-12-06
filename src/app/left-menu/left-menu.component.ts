@@ -53,6 +53,7 @@ export class LeftMenuComponent implements OnInit {
           value : this.folderService.idFolder
         }]
         file.withCredentials = false;
+        this.refresh();
       };
       this.uploader.onCompleteItem = (item: any, status: any) => {
         console.log('Uploaded File Details:', item);
@@ -63,31 +64,33 @@ export class LeftMenuComponent implements OnInit {
     }
 
     refresh(){
-      this.folderService.getFolderCreate().subscribe(
+      console.log("dentro")
+      this.folderService.getFolders(this.folderService.idFolder).subscribe(
         data=> this.folders = data["response"]
       );
       this.fileService.getFilesCreate()
       .subscribe(
         data => this.files = data["response"]
       );
+      console.log("noelia");
+      console.log(this.files);
     }
 
     createFolder(){
+      this.refresh();
       this.folderService.createFolder(this.folder).subscribe(
         d=>{
             console.log(d);
         },
         e=>console.error(e)
       );
-      this.folderService.getFolderCreate().subscribe(
-        data=> {this.folders = data["response"]
-        console.log("Noelia");}
-      );
+      this.refresh();
+     
 
     }
 
     closeMenu(){
-      this.folderService.getFolderCreate().subscribe(
+      this.folderService.getFolders(this.folderService.idFolder).subscribe(
         data=> {this.folders = data["response"]
         }
       );

@@ -7,8 +7,8 @@
         </div>
         
         <!-- Aqui van los-->
-        <div class="col-4 col-sm-3 col-md-3 col-lg-2 col-xl-2 mt-3" *ngFor="let file of filesArray">
-            <app-file [name]="file.NOMBRE"></app-file>
+        <div class="col-4 col-sm-3 col-md-3 col-lg-2 col-xl-2 mt-3" *ngFor="let file of files">
+            <app-file [fil]="file" ></app-file>
         </div>
         
         

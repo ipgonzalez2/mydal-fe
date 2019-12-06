@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { File } from '../shared/models/file.model';
 import { FileService } from '../shared/services/file.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -10,21 +10,29 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./file.component.scss']
 })
 export class FileComponent implements OnInit {
-  files : File;
-  @Input() name : string;
+  @Input() fil : File;
+  //@Output() mostrarCarpeta = new EventEmitter<File>();
+  //@Output() eliminarCarpeta = new EventEmitter<File>();
 
-
-  constructor(private fileService : FileService, private sanitizer: DomSanitizer) {
-    this.files = new File();
-   }
-
-  ngOnInit() {
-  
+  constructor(private fileService: FileService) { 
     
   }
 
+  ngOnInit() {
+    console.log(this.fil);
+
+  }
+
+  /*MostrarCarpeta(){
+    this.mostrarCarpeta.emit(this.fold)
+  }*/
+
+  /*EliminarCarpeta(){
+    this.eliminarCarpeta.emit(this.fold)
+  }*/
+
   download(){
-    this.fileService.download(this.name);
+    this.fileService.download(this.fil.NOMBRE);
   }
 
 }

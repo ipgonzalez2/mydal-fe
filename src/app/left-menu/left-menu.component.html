@@ -47,7 +47,7 @@
         </ul>
     </div>
 
-    <app-center-layout class="col" [folders]="folders" [files]="files"></app-center-layout>
+    <app-center-layout class="col" [folders]="folders"></app-center-layout>
 </div><!-- body-row END -->
 
 <!-- MODAL CREAR CARPETA-->
@@ -97,7 +97,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary"  (click)="uploader.uploadAll();" [disabled]="!uploader.getNotUploadedItems().length">Crear carpeta</button>
+                    <button type="button" class="btn btn-primary"  (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length"  data-dismiss="modal">Crear carpeta</button>
                 </div>
 
         </div>

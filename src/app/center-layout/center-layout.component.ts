@@ -14,7 +14,7 @@ import { CenterLayoutService } from '../shared/services/center-layout.service'
 export class CenterLayoutComponent implements OnInit {
 
   currentFolderId:number;
-  @Input() files : File[];
+  @Input() filesArray : File[];
   @Input() folders : Folder[];
   
   

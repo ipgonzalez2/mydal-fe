@@ -47,7 +47,7 @@
         </ul>
     </div>
 
-    <app-center-layout class="col" [folders]="folders"></app-center-layout>
+    <app-center-layout (click)="closeMenu()" oncontextmenu="return false" class="col" [folders]="folders"></app-center-layout>
 </div><!-- body-row END -->
 
 <!-- MODAL CREAR CARPETA-->

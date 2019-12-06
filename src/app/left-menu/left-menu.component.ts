@@ -64,8 +64,7 @@ export class LeftMenuComponent implements OnInit {
     }
 
     refresh(){
-      this.folderService.getFolderCreate()
-      .subscribe(
+      this.folderService.getFolderCreate().subscribe(
         data=> this.folders = data["response"]
       );
       this.fileService.getFilesCreate()
@@ -81,11 +80,22 @@ export class LeftMenuComponent implements OnInit {
         },
         e=>console.error(e)
       );
-      this.folderService.getFolderCreate()
-      .subscribe(
-        data=> this.folders = data["response"]
+      this.folderService.getFolderCreate().subscribe(
+        data=> {this.folders = data["response"]
+        console.log("Noelia");}
       );
 
+    }
+
+    closeMenu(){
+      this.folderService.getFolderCreate().subscribe(
+        data=> {this.folders = data["response"]
+        }
+      );
+      this.folders.forEach(element => {
+        element.menu = false;
+        
+      });
     }
 
     

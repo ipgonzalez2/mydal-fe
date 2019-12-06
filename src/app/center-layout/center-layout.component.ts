@@ -16,7 +16,8 @@ export class CenterLayoutComponent implements OnInit {
   currentFolderId:number;
   @Input() filesArray : File[];
   @Input() folders : Folder[];
-  
+  oldFolder :Folder;
+  auxfolder : Folder[];
   
     constructor(private folderService : FolderService, private fileService : FileService, private centerService : CenterLayoutService) { 
 
@@ -24,9 +25,10 @@ export class CenterLayoutComponent implements OnInit {
     
     ngOnInit() {
       this.currentFolderId=null;
-
+      this.auxfolder = [];
       this.refreshFolders();
       this.refreshFiles();
+      this.oldFolder = new Folder;
     }
 
     refreshFolders(){
@@ -45,10 +47,38 @@ export class CenterLayoutComponent implements OnInit {
 
     changeId(id:number){
       this.currentFolderId = id;
+<<<<<<< Updated upstream
       this.centerService.setIdFolder(this.currentFolderId);
+=======
+      
+>>>>>>> Stashed changes
       this.refreshFolders();
       this.refreshFiles();
 
     }
+    
+
+    MostrarCarpeta(folderNow){
+      
+      this.folders.forEach(element => {
+        if(element.ID_CARPETA === folderNow.ID_CARPETA){
+          element.menu = true;
+          this.oldFolder.menu = false;
+        }
+      });
+      console.log(folderNow);
+      console.log(this.oldFolder);
+
+      this.oldFolder = folderNow;
+      
+    }
+
+    EliminarCarpeta(folderNow){
+      this.folders = this.folders.filter(folder => folder.ID_CARPETA != folderNow.ID_CARPETA);
+      //this.changeId(folderNow.PADRE);
+    }
+
+    
+  
 
 }

@@ -46,7 +46,6 @@ export class LeftMenuComponent implements OnInit {
       this.folder = new Folder();
       this.folders = [];
       this.refresh();
-      console.log(JSON.parse(localStorage.getItem('currentUser')).email);
       this.uploader.onAfterAddingFile = (file) => {
         file.headers = [{
           name : "folderId",
@@ -56,7 +55,6 @@ export class LeftMenuComponent implements OnInit {
         this.refresh();
       };
       this.uploader.onCompleteItem = (item: any, status: any) => {
-        console.log('Uploaded File Details:', item);
         this.refresh();
         this.toastr.success('File successfully uploaded!');
       };
@@ -64,7 +62,6 @@ export class LeftMenuComponent implements OnInit {
     }
 
     refresh(){
-      console.log("dentro")
       this.folderService.getFolders(this.folderService.idFolder).subscribe(
         data=> this.folders = data["response"]
       );
@@ -72,17 +69,14 @@ export class LeftMenuComponent implements OnInit {
       .subscribe(
         data => this.files = data["response"]
       );
-      console.log("noelia");
-      console.log(this.files);
     }
 
     createFolder(){
       this.refresh();
       this.folderService.createFolder(this.folder).subscribe(
         d=>{
-            console.log(d);
+
         },
-        e=>console.error(e)
       );
       this.refresh();
      
@@ -90,14 +84,7 @@ export class LeftMenuComponent implements OnInit {
     }
 
     closeMenu(){
-      this.folderService.getFolders(this.folderService.idFolder).subscribe(
-        data=> {this.folders = data["response"]
-        }
-      );
-      this.folders.forEach(element => {
-        element.menu = false;
-        
-      });
+     this.refresh();
     }
 
     

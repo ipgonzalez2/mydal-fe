@@ -11,27 +11,28 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class FileComponent implements OnInit {
   @Input() fil : File;
-  //@Output() mostrarCarpeta = new EventEmitter<File>();
+  @Output() mostrarFichero = new EventEmitter<File>();
   //@Output() eliminarCarpeta = new EventEmitter<File>();
+  hola : boolean;
 
   constructor(private fileService: FileService) { 
     
   }
 
   ngOnInit() {
-    console.log(this.fil);
-
   }
 
-  /*MostrarCarpeta(){
-    this.mostrarCarpeta.emit(this.fold)
-  }*/
+  MostrarFichero(){
+    this.mostrarFichero.emit(this.fil)
+
+  }
 
   /*EliminarCarpeta(){
     this.eliminarCarpeta.emit(this.fold)
   }*/
 
   download(){
+    console.log("noelia");
     this.fileService.download(this.fil.NOMBRE);
   }
 

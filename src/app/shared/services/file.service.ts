@@ -31,7 +31,7 @@ export class FileService {
   }
 
   getFiles(id:number) {
-    console.log("hola");
+    
     // const userId=JSON.parse(localStorage.getItem('currentUser')).id;
     this.idFolder = id;
     return this.http.get<File[]>(environment.apiUrl+'file/'+this.idFolder, { headers: this.headers });
@@ -45,7 +45,6 @@ export class FileService {
     this.http.get(environment.apiUrl+'file/download/'+fileName, { headers : {"userEmail" : JSON.parse(localStorage.getItem("currentUser")).email
     , 'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem("currentUser")).jwt,
     "userId" : JSON.parse(localStorage.getItem("currentUser")).id },responseType: 'blob'}).subscribe(res => {
-      console.log(res);
       saveAs(res, fileName); 
     });
   }

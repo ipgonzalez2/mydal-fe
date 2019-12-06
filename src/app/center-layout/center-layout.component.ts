@@ -16,7 +16,8 @@ export class CenterLayoutComponent implements OnInit {
   @Input() files : File[];
   @Input() folders : Folder[];
   oldFolder :Folder;
-  auxfolder : Folder[];
+  oldFile : File;
+  //auxfolder : Folder[];
   
     constructor(private folderService : FolderService, private fileService : FileService) { 
 
@@ -24,8 +25,9 @@ export class CenterLayoutComponent implements OnInit {
     
     ngOnInit() {
       this.currentFolderId=null;
-      this.auxfolder = [];
+      //this.auxfolder = [];
       this.oldFolder = new Folder;
+      this.oldFile = new File;
     }
 
     refreshFolders(){
@@ -53,14 +55,51 @@ export class CenterLayoutComponent implements OnInit {
       
       this.folders.forEach(element => {
         if(element.ID_CARPETA === folderNow.ID_CARPETA){
-          element.menu = true;
-          this.oldFolder.menu = false;
+          if(element.ID_CARPETA === this.oldFolder.ID_CARPETA){
+            if(element.menu){
+              element.menu = false;
+            }else{
+              element.menu = true;
+            }
+          }else{
+            element.menu = true;
+            this.oldFolder.menu = false;
+          }
+          
         }
       });
-      console.log(folderNow);
-      console.log(this.oldFolder);
+
+      this.files.forEach(element => {
+
+        element.menu = false;
+    });
+
 
       this.oldFolder = folderNow;
+      
+    }
+
+    MostrarFichero(fileNow){      
+      this.files.forEach(element => {
+        if(element.ID_FICHERO === fileNow.ID_FICHERO){
+          if(element.ID_FICHERO === this.oldFile.ID_FICHERO){
+            if(element.menu){
+              element.menu = false;
+            }else{
+              element.menu = true;
+            }
+          }else{
+            element.menu = true;
+            this.oldFile.menu = false;
+          }
+        }
+      });
+
+      this.folders.forEach(element => {
+
+          element.menu = false;
+      });
+      this.oldFile = fileNow;
       
     }
 

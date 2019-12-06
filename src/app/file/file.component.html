@@ -1,19 +1,21 @@
 
 
-    <div id="1" class="card">
-        <img src="../../assets/img/file.png" class="fold card-img-top" alt="fa-folder">
-        <div class="pl-0 pr-0 pt-0 pb-0 card-body titulo">
-            <p class="card-title">{{fil.NOMBRE}}</p>
-            
+    <div id="1" class="card" (mousedown)="MostrarFichero()">
+            <img src="../../assets/img/file.png" class="fold card-img-top" alt="fa-folder">
+            <div class="pl-0 pr-0 pt-0 pb-0 card-body titulo">
+                <p class="card-title">{{fil.NOMBRE}}</p>
+                
+            </div>
         </div>
-    </div>
-    <nav id="opcionesfichero1" class="opcionesfichero">
-        <div class="menu_simple">
-            <ul>
-                <li><a href="#" data-toggle="modal" data-target="#modalShareFile">Compartir</a></li>
-                <li><a href="#" >Descargar</a></li>
-                <li><a href="#" data-toggle="modal" data-target="#modalDeleteFile">Eliminar</a></li>
-            </ul>
-        </div>
-    </nav>
-
+    
+        <nav id="opcionescarpeta2" class="opcionescarpeta" *ngIf="fil.menu">
+                <div class="menu_simple">
+                        <ul>
+                                <li><a>Compartir</a></li>
+                                <li><a (click)="download()" >Descargar</a></li>
+                                <li><a href="#" data-toggle="modal" data-target="#modalDeleteFile">Eliminar</a></li>
+                            </ul>
+                </div>
+        
+        </nav>
+    

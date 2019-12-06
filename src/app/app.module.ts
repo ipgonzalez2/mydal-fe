@@ -19,6 +19,7 @@ import { CenterLayoutComponent } from './center-layout/center-layout.component';
 import { CommonModule } from '@angular/common';
 import {Http, ResponseContentType} from '@angular/http';
 
+
 import { FileSelectDirective } from 'ng2-file-upload';
 
 

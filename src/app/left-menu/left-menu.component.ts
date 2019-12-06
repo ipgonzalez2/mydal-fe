@@ -7,7 +7,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FileUploader } from 'ng2-file-upload';
 import { ToastrService } from 'ngx-toastr';
 import { environment } from '../../environments/environment';
-import { CenterLayoutService } from '../shared/services/center-layout.service'
 
 
 const URL = environment.apiUrl+'file/';
@@ -24,7 +23,7 @@ export class LeftMenuComponent implements OnInit {
   folders : Folder[];
   files : File[];
   constructor(private folderService : FolderService, private toastr: ToastrService, private fileService : FileService,
-    private centerService : CenterLayoutService) { 
+  ) { 
     
   }
   public uploader: FileUploader = new FileUploader({
@@ -51,7 +50,7 @@ export class LeftMenuComponent implements OnInit {
       this.uploader.onAfterAddingFile = (file) => {
         file.headers = [{
           name : "folderId",
-          value : this.centerService.idFolder
+          value : this.folderService.idFolder
         }]
         file.withCredentials = false;
       };

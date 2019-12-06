@@ -4,7 +4,6 @@ import { FolderService } from '../shared/services/folder.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { File } from '../shared/models/file.model';
 import { FileService } from '../shared/services/file.service';
-import { CenterLayoutService } from '../shared/services/center-layout.service'
 
 @Component({
   selector: 'app-center-layout',
@@ -19,7 +18,7 @@ export class CenterLayoutComponent implements OnInit {
   oldFolder :Folder;
   auxfolder : Folder[];
   
-    constructor(private folderService : FolderService, private fileService : FileService, private centerService : CenterLayoutService) { 
+    constructor(private folderService : FolderService, private fileService : FileService) { 
 
     }
     
@@ -47,14 +46,8 @@ export class CenterLayoutComponent implements OnInit {
 
     changeId(id:number){
       this.currentFolderId = id;
-<<<<<<< Updated upstream
-      this.centerService.setIdFolder(this.currentFolderId);
-=======
-      
->>>>>>> Stashed changes
       this.refreshFolders();
       this.refreshFiles();
-
     }
     
 

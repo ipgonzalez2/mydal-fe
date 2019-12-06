@@ -12,7 +12,6 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class FileComponent implements OnInit {
   files : File;
   @Input() name : string;
-  fileUrl;
 
 
   constructor(private fileService : FileService, private sanitizer: DomSanitizer) {

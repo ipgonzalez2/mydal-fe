@@ -14,6 +14,7 @@ export class FolderComponent implements OnInit {
   @Input() fold : Folder;
   @Output() mostrarCarpeta = new EventEmitter<Folder>();
   @Output() eliminarCarpeta = new EventEmitter<Folder>();
+  @Output() changeId = new EventEmitter<number>();
   modal : boolean
 
   constructor() { 
@@ -21,6 +22,11 @@ export class FolderComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  ChangeId(){
+    this.changeId.emit(this.fold.ID_CARPETA);
+
   }
 
   MostrarCarpeta(){

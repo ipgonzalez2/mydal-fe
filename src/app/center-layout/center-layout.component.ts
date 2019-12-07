@@ -25,7 +25,6 @@ export class CenterLayoutComponent implements OnInit {
     
     ngOnInit() {
       this.currentFolderId=null;
-      //this.auxfolder = [];
       this.oldFolder = new Folder;
       this.oldFile = new File;
     }
@@ -45,7 +44,6 @@ export class CenterLayoutComponent implements OnInit {
     }
 
     changeId(id:number){
-      console.log("cm");
       console.log(id);
       this.currentFolderId = id;
       this.refreshFolders();
@@ -106,6 +104,7 @@ export class CenterLayoutComponent implements OnInit {
     }
 
     EliminarCarpeta(folderNow){
+      this.refreshFolders();
       console.log("padre");
       this.currentFolderId = folderNow.PADRE;
       console.log(folderNow.PADRE);
@@ -115,7 +114,7 @@ export class CenterLayoutComponent implements OnInit {
         },
       );
       console.log("eliminar")
-      this.changeId(folderNow.PADRE);
+      this.refreshFolders();
     }
 
     

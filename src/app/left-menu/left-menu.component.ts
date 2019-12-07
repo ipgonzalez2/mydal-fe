@@ -20,8 +20,8 @@ const URL = environment.apiUrl+'file/';
 })
 export class LeftMenuComponent implements OnInit {
   folder :Folder;
-  folders : Folder[];
-  files : File[];
+  foldersCenter : Folder[];
+  filesCenter : File[];
   constructor(private folderService : FolderService, private toastr: ToastrService, private fileService : FileService,
   ) { 
     
@@ -44,7 +44,7 @@ export class LeftMenuComponent implements OnInit {
     
     ngOnInit() { 
       this.folder = new Folder();
-      this.folders = [];
+      this.foldersCenter = [];
       this.refresh();
       this.uploader.onAfterAddingFile = (file) => {
         file.headers = [{
@@ -55,30 +55,31 @@ export class LeftMenuComponent implements OnInit {
         this.refresh();
       };
       this.uploader.onCompleteItem = (item: any, status: any) => {
+        
         this.refresh();
         this.toastr.success('File successfully uploaded!');
+
       };
       
     }
 
     refresh(){
       this.folderService.getFolders(this.folderService.idFolder).subscribe(
-        data=> this.folders = data["response"]
+        data=> this.foldersCenter = data["response"]
       );
       this.fileService.getFilesCreate()
       .subscribe(
-        data => this.files = data["response"]
+        data => this.filesCenter = data["response"]
       );
     }
 
     createFolder(){
-      this.refresh();
       this.folderService.createFolder(this.folder).subscribe(
         d=>{
-
+          this.refresh();
+          this.folder.NOMBRE ="";
         },
       );
-      this.refresh();
 
     }
 

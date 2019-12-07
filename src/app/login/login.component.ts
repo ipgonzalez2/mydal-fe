@@ -68,4 +68,15 @@ export class LoginComponent implements OnInit {
     );
 
   }
+
+  spanish() {
+    localStorage.setItem('locale', 'es');
+    window.location.reload();
+  }
+
+  english() {
+    localStorage.setItem('locale', 'en');
+    window.location.reload();
+  }
+  
 }

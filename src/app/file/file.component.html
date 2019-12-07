@@ -3,7 +3,7 @@
     <div id="1" class="card" (mousedown)="MostrarFichero()">
             <img src="../../assets/img/file.png" class="fold card-img-top" alt="fa-folder">
             <div class="pl-0 pr-0 pt-0 pb-0 card-body titulo">
-                <p class="card-title">{{fil.NOMBRE}}</p>
+                <p class="card-title">{{fil.NOMBRE | slice:0:10}}</p>
                 
             </div>
         </div>
@@ -11,9 +11,9 @@
         <nav id="opcionescarpeta2" class="opcionescarpeta" *ngIf="fil.menu">
                 <div class="menu_simple">
                         <ul>
-                                <li><a (click)="download()" >Descargar</a></li>
-                                <li><a (click)="share()" >Compartir</a></li>
-                                <li><a href="#" data-toggle="modal" data-target="#modalDeleteFile">Eliminar</a></li>
+                                <li><a (click)="download()" i18n>Descargar</a></li>
+                                <li><a (click)="share()" i18n>Compartir</a></li>
+                                <li><a i18n >Eliminar</a></li>
                             </ul>
                 </div>
         

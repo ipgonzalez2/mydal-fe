@@ -10,36 +10,36 @@
                 class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
                 <div class="d-flex w-100 justify-content-start align-items-center">
                     <span class="fa fa-globe fa-fw mr-3"></span>
-                    <span class="menu-collapsed">Idioma</span>
+                    <span class="menu-collapsed" i18n>Idioma</span>
                     <span class="submenu-icon ml-auto"></span>
                 </div>
             </a>
             <!-- OPCIONES MENU IDIOMA -->
             <div id='submenu1' class="collapse sidebar-submenu">
-                <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
-                    <span class="menu-collapsed">Inglés</span>
+                <a class="list-group-item list-group-item-action bg-dark text-white">
+                    <span class="menu-collapsed" i18n>Inglés</span>
                 </a>
-                <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
-                    <span class="menu-collapsed">Español</span>
+                <a class="list-group-item list-group-item-action bg-dark text-white">
+                    <span class="menu-collapsed" i18n>Español</span>
                 </a>
             </div>
 
 
             <!-- OPCION DE CARPETA -->
-            <a href="#" class="bg-dark list-group-item list-group-item-action" data-toggle="modal"
+            <a class="bg-dark list-group-item list-group-item-action" data-toggle="modal"
                 data-target="#modalCreateFolder">
                 <div class="d-flex w-100 justify-content-start align-items-center">
                     <span class="fa fa-folder fa-fw mr-3"></span>
-                    <span class="menu-collapsed">Crear carpeta</span>
+                    <span class="menu-collapsed" i18n>Crear carpeta</span>
                 </div>
             </a>
 
             <!-- MENU DE FICHERO -->
-            <a href="" class="bg-dark list-group-item list-group-item-action" data-toggle="modal"
+            <a  class="bg-dark list-group-item list-group-item-action" data-toggle="modal"
                 data-target="#modalUploadFile">
                 <div class="d-flex w-100 justify-content-start align-items-center">
                     <span class="fa fa-file fa-fw mr-3"></span>
-                    <span class="menu-collapsed">Subir fichero</span>
+                    <span class="menu-collapsed" i18n>Subir fichero</span>
                 </div>
             </a>
 
@@ -55,7 +55,7 @@
     <div class="modal-dialog modal-dialog-centered " role="document">
         <div class="col-9 px-0 mx-auto modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="createFolderTitle">Crea una carpeta</h5>
+                <h5 class="modal-title" id="createFolderTitle" i18n>Crea una carpeta</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -63,14 +63,14 @@
 
             <div  >
                 <div class="mx-auto cuerpoModal cuerpoModal modal-body">
-                    <p>Introduce el nombe de la carpeta</p>
-                    <div class="col-10 mx-auto"><input class="inputModal col-12" type="text" placeholder="Nombre" [(ngModel)]="folder.NOMBRE">
+                    <p i18n>Introduce el nombe de la carpeta</p>
+                    <div class="col-10 mx-auto"><input class="inputModal col-12" type="text" i18n-placeholder placeholder="Nombre"  [(ngModel)]="folder.NOMBRE">
                     </div>
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" (click)='createFolder()'>Crear carpeta</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" i18n>Cerrar</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" (click)='createFolder()' i18n>Crear carpeta</button>
                 </div>
             </div>
 
@@ -83,21 +83,21 @@
     <div class="modal-dialog modal-dialog-centered " role="document">
         <div class="col-9 px-0 mx-auto modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="createFolderTitle">Añade un fichero</h5>
+                <h5 class="modal-title" id="createFolderTitle" i18n>Añade un fichero</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
 
                 <div class="mx-auto cuerpoModal cuerpoModal modal-body file-upload">
-                    <p>Añade un fichero</p>
-                    <div class="col-10 mx-auto"><input class="inputModal" type="file" name="image" ng2FileSelect [uploader]="uploader" accept="*" class="col-12" placeholder="Nombre">
+                    <p i18n>Añade un fichero</p>
+                    <div class="col-10 mx-auto"><input class="inputModal col-12" type="file" name="image" ng2FileSelect [uploader]="uploader" accept="*"  i18n-placeholder placeholder="Nombre">
                     </div>
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary"  (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length"  data-dismiss="modal">Crear carpeta</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" i18n>Cerrar</button>
+                    <button type="button" class="btn btn-primary"  (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length"  data-dismiss="modal" i18n>Subir fichero</button>
                 </div>
 
         </div>

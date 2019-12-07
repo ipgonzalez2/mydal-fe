@@ -20,7 +20,7 @@ import { CommonModule } from '@angular/common';
 import {Http, ResponseContentType} from '@angular/http';
 
 
-import { FileSelectDirective } from 'ng2-file-upload';
+import { FileUploadModule } from 'ng2-file-upload';
 
 
 @NgModule({
@@ -32,8 +32,7 @@ import { FileSelectDirective } from 'ng2-file-upload';
     FolderComponent,
     FileComponent,
     TopMenuComponent,
-    CenterLayoutComponent,
-    FileSelectDirective
+    CenterLayoutComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +41,8 @@ import { FileSelectDirective } from 'ng2-file-upload';
     HttpClientModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(),
-    CommonModule
+    CommonModule,
+    FileUploadModule
   ],
   providers: [],
   bootstrap: [AppComponent]

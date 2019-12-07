@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="es" target-language="es" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="b10d1f39a862bc654c5c63afff6ecd994da16eca" datatype="html">
+        <source>Crea tu cuenta</source>
+        <target>Crea tu cuenta</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d736fb7085590c5ec6408bf12d5afde7388a81ee" datatype="html">
+        <source>Bienvenido</source>
+        <target>Bienvenido</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dd2a11ebc737589080ed400dacc33a8c8c84728b" datatype="html">
+        <source>Nombre</source>
+        <target>Nombre</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/left-menu/left-menu.component.html</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/left-menu/left-menu.component.html</context>
+          <context context-type="linenumber">94</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="244aae9346da82b0922506c2d2581373a15641cc" datatype="html">
+        <source>Email</source>
+        <target>Email</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e369e13629132e32dcd958b82261059243f21d58" datatype="html">
+        <source>Contraseña</source>
+        <target>Contraseña</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6eb1494dd3831a94783c6339a2b0ddf12cff3253" datatype="html">
+        <source>Min 6 caracteres</source>
+        <target>min 6 caracteres</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e2749d19d088b0ab47aae3902e404587fc41d296" datatype="html">
+        <source>
+                                                aceptar
+                                            </source>
+        <target>aceptar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login.component.html</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="121023d45af862baec830cdd154dbee4d7e59b82" datatype="html">
+        <source>
+                                            entrar
+                                        </source>
+         <target>entrar</target>                               
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login.component.html</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bd9cd654806f1f0bf138940f05a6a20192778e7c" datatype="html">
+        <source>¿Ya tienes una cuenta? <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Inicia sesión<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source>
+        <target>¿Ya tienes una cuenta? <x id="START_LINK" ctype="x-a"/>Inicia sesión<x id="CLOSE_LINK" ctype="x-a"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login.component.html</context>
+          <context context-type="linenumber">74</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="41f7cb66e4627b6e60c7fc61167e0d8a6bffa3f3" datatype="html">
+        <source>¿Aún no tienes cuenta?<x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/> Registrate<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source>
+        <target>¿Aún no tienes cuenta?<x id="START_LINK" ctype="x-a"/> Registrate<x id="CLOSE_LINK" ctype="x-a"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login.component.html</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="22240e2f30b2a8777b432aba8efb98ff333b25ad" datatype="html">
+        <source>Inglés</source>
+        <target>Inglés</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login.component.html</context>
+          <context context-type="linenumber">89</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/left-menu/left-menu.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/top-menu/top-menu.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e00fde81f1d8d3a8585bc2e03445dd63ceeb3b55" datatype="html">
+        <source>Español</source>
+        <target>Español</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login.component.html</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/left-menu/left-menu.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/top-menu/top-menu.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="24c50f7617a545e6ebc78da6c82212154045c3a6" datatype="html">
+        <source>Idioma</source>
+        <target>Idioma</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/left-menu/left-menu.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/top-menu/top-menu.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3f23e34900ea41b5805cae2686cb4f1c974f1e11" datatype="html">
+        <source>Crear carpeta</source>
+        <target>Crear carpeta</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/left-menu/left-menu.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/left-menu/left-menu.component.html</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/top-menu/top-menu.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fdaa03899c455c2915e2c07f2f853647a734d903" datatype="html">
+        <source>Subir fichero</source>
+        <target>Subir fichero</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/left-menu/left-menu.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/left-menu/left-menu.component.html</context>
+          <context context-type="linenumber">100</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4e1efd12e57ee4be0424ff66a02b24e97c815f16" datatype="html">
+        <source>Crea una carpeta</source>
+        <target>Crea una carpeta</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/left-menu/left-menu.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d4301bbb3e605d15c7cd1260fa8e5841be176eb2" datatype="html">
+        <source>Introduce el nombe de la carpeta</source>
+        <target>Introduce el nombre de la carpeta</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/left-menu/left-menu.component.html</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0acf4e0f9350f920b529a38364281d337c54edfd" datatype="html">
+        <source>Cerrar</source>
+        <target>Cerrar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/left-menu/left-menu.component.html</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/left-menu/left-menu.component.html</context>
+          <context context-type="linenumber">99</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6f475232f9018dd452d8c4c3a7265188a6bb744e" datatype="html">
+        <source>Añade un fichero</source>
+        <target>Añade un fichero</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/left-menu/left-menu.component.html</context>
+          <context context-type="linenumber">86</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/left-menu/left-menu.component.html</context>
+          <context context-type="linenumber">93</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4c0cfd3e88d5d6af1d5f23914fb74cb353a83811" datatype="html">
+        <source>Eliminar</source>
+        <target>Eliminar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/folder/folder.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/file/file.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d983c45aa02e2a6b88c964adc340d9156c8928ae" datatype="html">
+        <source>Descargar</source>
+        <target>Descargar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/file/file.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1433da646ec1f3ef07925615a6d94ae33cb7288e" datatype="html">
+        <source>Compartir</source>
+        <target>Compartir</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/file/file.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e1ec80d1cecc8c466276dce7fc8caa95a6818ffe" datatype="html">
+        <source>Cerrar sesión</source>
+        <target>Cerrar sesión</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/top-menu/top-menu.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/top-menu/top-menu.component.html</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2d44a896fc6d9e133236f87bef9384910274d8b3" datatype="html">
+        <source>Crear fichero</source>
+        <target>Crear fichero</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/top-menu/top-menu.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

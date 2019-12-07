@@ -8,8 +8,7 @@
     <nav id="opcionescarpeta2" class="opcionescarpeta" *ngIf="fold.menu">
         <div class="menu_simple">
             <ul>
-                <li><a data-toggle="modal" data-target="#modalDeleteFolder" (click)="EliminarCarpeta()">Eliminar</a></li>
-                <li><a data-toggle="modal" data-target="#modalModifyFolder" >Modificar</a></li>
+                <li><a (click)="EliminarCarpeta()" i18n>Eliminar</a></li>
             </ul>
         </div>
 

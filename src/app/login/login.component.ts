@@ -39,15 +39,15 @@ export class LoginComponent implements OnInit {
   }
 
   public login(){
-    console.log(this.user);
+
     this.auth.login(this.user.email,this.user.password).subscribe(
       d=>{
-          console.log(d);
+
           this.register = true;
           this.user.email=""; //preguntar yery si va bien
           this.user.password= "";
           this.user.username = "";
-          console.log("noelia");
+
           this.router.navigate([this.url]);
       },
       e=>console.error(e)
@@ -56,10 +56,10 @@ export class LoginComponent implements OnInit {
   }
 
   public registerUser(){
-    console.log(this.user);
+
     this.usersService.registerUser(this.user).subscribe(
       d=>{
-          console.log(d);
+          
           this.register = false;
           this.user.email=""; //preguntar yery si va bien
           this.user.password= "";

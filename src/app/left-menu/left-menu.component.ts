@@ -7,7 +7,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FileUploader } from 'ng2-file-upload';
 import { ToastrService } from 'ngx-toastr';
 import { environment } from '../../environments/environment';
-import { CenterLayoutService } from '../shared/services/center-layout.service'
 
 
 const URL = environment.apiUrl+'file/';
@@ -21,10 +20,10 @@ const URL = environment.apiUrl+'file/';
 })
 export class LeftMenuComponent implements OnInit {
   folder :Folder;
-  folders : Folder[];
-  files : File[];
+  foldersCenter : Folder[];
+  filesCenter : File[];
   constructor(private folderService : FolderService, private toastr: ToastrService, private fileService : FileService,
-    private centerService : CenterLayoutService) { 
+  ) { 
     
   }
   public uploader: FileUploader = new FileUploader({
@@ -45,47 +44,47 @@ export class LeftMenuComponent implements OnInit {
     
     ngOnInit() { 
       this.folder = new Folder();
-      this.folders = [];
+      this.foldersCenter = [];
       this.refresh();
-      console.log(JSON.parse(localStorage.getItem('currentUser')).email);
       this.uploader.onAfterAddingFile = (file) => {
         file.headers = [{
           name : "folderId",
-          value : this.centerService.idFolder
+          value : this.folderService.idFolder
         }]
         file.withCredentials = false;
+        this.refresh();
       };
       this.uploader.onCompleteItem = (item: any, status: any) => {
-        console.log('Uploaded File Details:', item);
+        
         this.refresh();
         this.toastr.success('File successfully uploaded!');
+
       };
       
     }
 
     refresh(){
-      this.folderService.getFolderCreate()
-      .subscribe(
-        data=> this.folders = data["response"]
+      this.folderService.getFolders(this.folderService.idFolder).subscribe(
+        data=> this.foldersCenter = data["response"]
       );
       this.fileService.getFilesCreate()
       .subscribe(
-        data => this.files = data["response"]
+        data => this.filesCenter = data["response"]
       );
     }
 
     createFolder(){
       this.folderService.createFolder(this.folder).subscribe(
         d=>{
-            console.log(d);
+          this.refresh();
+          this.folder.NOMBRE ="";
         },
-        e=>console.error(e)
-      );
-      this.folderService.getFolderCreate()
-      .subscribe(
-        data=> this.folders = data["response"]
       );
 
+    }
+
+    closeMenu(){
+     this.refresh();
     }
 
     

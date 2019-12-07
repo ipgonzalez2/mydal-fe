@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { File } from '../shared/models/file.model';
 import { FileService } from '../shared/services/file.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -12,8 +12,9 @@ import { ToastrService, ToastrConfig } from 'ngx-toastr';
 })
 export class FileComponent implements OnInit {
   files : File;
-  @Input() name : string;
-  @Input() id : number;
+  @Input() fil : File;
+  @Output() mostrarFichero = new EventEmitter<File>();
+  hola : boolean;
   nameFile : string;
   shareFile : string;
   url: string;
@@ -28,17 +29,24 @@ export class FileComponent implements OnInit {
    }
 
   ngOnInit() {
-  
-    
   }
 
+  MostrarFichero(){
+    this.mostrarFichero.emit(this.fil)
+
+  }
+
+  /*EliminarCarpeta(){
+    this.eliminarCarpeta.emit(this.fold)
+  }*/
+
   download(){
-    this.nameFile = '(' + this.id + ')' + this.name;
-    this.fileService.download(this.id, this.nameFile);
+    this.nameFile = '(' + this.fil.ID_FICHERO + ')' + this.fil.NOMBRE;
+    this.fileService.download(this.fil.ID_FICHERO, this.nameFile);
   }
 
   share(){
-    this.fileService.share(this.id, this.url).subscribe(data=>{
+    this.fileService.share(this.fil.ID_FICHERO, this.url).subscribe(data=>{
       this.toastr.info(data["response"], "Link de descarga");}
     );
   }

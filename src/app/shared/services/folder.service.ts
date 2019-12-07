@@ -31,12 +31,14 @@ export class FolderService {
     this.idFolder = id;
     return this.http.get<Folder[]>(environment.apiUrl+'folder/'+this.idFolder, { headers: this.headers });
   }
-  getFolderCreate() {
-    return this.http.get<Folder[]>(environment.apiUrl+'folder/'+this.idFolder, { headers: this.headers });
-  }
+ 
 
   createFolder(folder:Folder){
     return this.http.post(environment.apiUrl+'folder/create/'+this.idFolder, folder,{ headers: this.headers });
+  }
+
+  deleteFolder(folder:Folder){
+    return this.http.post(environment.apiUrl+'folder/delete/', folder,{ headers: this.headers });
   }
 
 }

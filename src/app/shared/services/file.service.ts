@@ -31,7 +31,7 @@ export class FileService {
   }
 
   getFiles(id:number) {
-    console.log("hola");
+    
     // const userId=JSON.parse(localStorage.getItem('currentUser')).id;
     this.idFolder = id;
     return this.http.get<File[]>(environment.apiUrl+'file/'+this.idFolder, { headers: this.headers });

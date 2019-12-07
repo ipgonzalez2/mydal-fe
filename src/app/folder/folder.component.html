@@ -1,16 +1,16 @@
 
-    <div id="2" class="card" onmousedown="mostrarCarpeta(event,id);">
+    <div id="2" class="card" (mousedown)="MostrarCarpeta()" (click)="ChangeId()">
         <img src="../../assets/img/folder.jpg" class="fold card-img-top" alt="fa-folder">
         <div class="col-12 pl-0 pr-0 pt-0 pb-0 card-body titulo">
-            <p class="card-title">{{name}}</p>
+            <p class="card-title">{{fold.NOMBRE}}</p>
         </div>
     </div>
-    <nav id="opcionescarpeta2" class="opcionescarpeta">
+    <nav id="opcionescarpeta2" class="opcionescarpeta" *ngIf="fold.menu">
         <div class="menu_simple">
             <ul>
-                <li><a href="#" data-toggle="modal" data-target="#modalDeleteFolder">Eliminar</a></li>
-                <li><a href="#" data-toggle="modal" data-target="#modalModifyFolder">Modificar</a></li>
+                <li><a data-toggle="modal" data-target="#modalDeleteFolder" (click)="EliminarCarpeta()">Eliminar</a></li>
+                <li><a data-toggle="modal" data-target="#modalModifyFolder" >Modificar</a></li>
             </ul>
         </div>
-    </nav>
 
+    </nav>

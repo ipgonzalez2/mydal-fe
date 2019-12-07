@@ -45,6 +45,8 @@ export class CenterLayoutComponent implements OnInit {
     }
 
     changeId(id:number){
+      console.log("cm");
+      console.log(id);
       this.currentFolderId = id;
       this.refreshFolders();
       this.refreshFiles();
@@ -104,8 +106,16 @@ export class CenterLayoutComponent implements OnInit {
     }
 
     EliminarCarpeta(folderNow){
-      this.folders = this.folders.filter(folder => folder.ID_CARPETA != folderNow.ID_CARPETA);
-      //this.changeId(folderNow.PADRE);
+      console.log("padre");
+      this.currentFolderId = folderNow.PADRE;
+      console.log(folderNow.PADRE);
+      this.folderService.deleteFolder(folderNow).subscribe(
+        d=>{
+
+        },
+      );
+      console.log("eliminar")
+      this.changeId(folderNow.PADRE);
     }
 
     

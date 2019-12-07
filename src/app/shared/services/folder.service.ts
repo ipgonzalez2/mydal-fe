@@ -37,4 +37,8 @@ export class FolderService {
     return this.http.post(environment.apiUrl+'folder/create/'+this.idFolder, folder,{ headers: this.headers });
   }
 
+  deleteFolder(folder:Folder){
+    return this.http.post(environment.apiUrl+'folder/delete/', folder,{ headers: this.headers });
+  }
+
 }

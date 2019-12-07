@@ -79,7 +79,6 @@ export class LeftMenuComponent implements OnInit {
         },
       );
       this.refresh();
-     
 
     }
 

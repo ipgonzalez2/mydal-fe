@@ -41,12 +41,18 @@ export class FileService {
     return this.http.get<File[]>(environment.apiUrl+'file/'+this.idFolder, { headers: this.headers });
   }
 
-  download(fileName: string) : void {
-    this.http.get(environment.apiUrl+'file/download/'+fileName, { headers : {"userEmail" : JSON.parse(localStorage.getItem("currentUser")).email
+  download(fileId: number, fileName : string) : void {
+    this.http.get(environment.apiUrl+'file/download/'+fileId, { headers : {"userEmail" : JSON.parse(localStorage.getItem("currentUser")).email
     , 'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem("currentUser")).jwt,
     "userId" : JSON.parse(localStorage.getItem("currentUser")).id },responseType: 'blob'}).subscribe(res => {
-      console.log(res);
       saveAs(res, fileName); 
     });
   }
+
+  share(fileId : number, url:string) :Observable<any>{
+    return this.http.post(environment.apiUrl+'file/share/'+fileId, url, { headers :this.headers}); 
+  }
+
 }
+
+

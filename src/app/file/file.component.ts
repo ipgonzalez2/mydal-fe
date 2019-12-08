@@ -18,7 +18,6 @@ export class FileComponent implements OnInit {
   nameFile : string;
   shareFile : string;
   url: string;
-  urlNueva: string;
 
 
   constructor(private fileService : FileService, private toastr: ToastrService) {
@@ -36,10 +35,6 @@ export class FileComponent implements OnInit {
 
   }
 
-  /*EliminarCarpeta(){
-    this.eliminarCarpeta.emit(this.fold)
-  }*/
-
   download(){
     this.nameFile = '(' + this.fil.ID_FICHERO + ')' + this.fil.NOMBRE;
     this.fileService.download(this.fil.ID_FICHERO, this.nameFile);
@@ -49,6 +44,12 @@ export class FileComponent implements OnInit {
     this.fileService.share(this.fil.ID_FICHERO, this.url).subscribe(data=>{
       this.toastr.info(data["response"], "Link de descarga");}
     );
+  }
+
+  delete(){
+    this.fileService.delete(this.fil).subscribe(res => {
+      this.toastr.success("Fichero borrado correctamente");
+    })
   }
 
 }

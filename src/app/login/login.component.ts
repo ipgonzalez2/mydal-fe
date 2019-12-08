@@ -36,6 +36,9 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.register = false;
     this.user=new User(); 
+    this.user.username="";
+    this.user.email=""; 
+    this.user.password= "";
   }
 
   public login(){
@@ -44,9 +47,9 @@ export class LoginComponent implements OnInit {
       d=>{
 
           this.register = true;
-          this.user.email=""; //preguntar yery si va bien
+          this.user.username="";
+          this.user.email=""; 
           this.user.password= "";
-          this.user.username = "";
 
           this.router.navigate([this.url]);
       },
@@ -61,8 +64,9 @@ export class LoginComponent implements OnInit {
       d=>{
           
           this.register = false;
-          this.user.email=""; //preguntar yery si va bien
+          this.user.username="";
           this.user.password= "";
+         
       },
       e=>console.error(e)
     );

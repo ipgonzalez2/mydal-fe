@@ -70,13 +70,7 @@
               "i18nFormat": "xlf",
               "i18nLocale": "es"
             },
-            "en": {
-              "aot": true,
-              "outputPath": "dist/my-project-en/",
-              "i18nFile": "src/locale/messages.en.xlf",
-              "i18nFormat": "xlf",
-              "i18nLocale": "en"
-            }
+            
           }
         },
         "serve": {

@@ -4,6 +4,7 @@ import { FolderService } from '../shared/services/folder.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { File } from '../shared/models/file.model';
 import { FileService } from '../shared/services/file.service';
+import { ToastrService, ToastrConfig } from 'ngx-toastr';
 
 @Component({
   selector: 'app-center-layout',
@@ -19,8 +20,10 @@ export class CenterLayoutComponent implements OnInit {
   oldFile : File;
   //auxfolder : Folder[];
   
-    constructor(private folderService : FolderService, private fileService : FileService) { 
-
+    constructor(private folderService : FolderService, private fileService : FileService, private toastr: ToastrService) { 
+      this.toastr.toastrConfig.disableTimeOut = true;
+      this.toastr.toastrConfig.tapToDismiss = false;
+      this.toastr.toastrConfig.closeButton = true;
     }
     
     ngOnInit() {
@@ -115,6 +118,14 @@ export class CenterLayoutComponent implements OnInit {
       );
       console.log("eliminar")
       this.refreshFolders();
+    }
+
+    deleteFile(fileNow){
+      this.fileService.delete(fileNow).subscribe(res => {
+        this.toastr.success("Fichero borrado correctamente");
+        this.refreshFiles();
+      })
+      
     }
 
     

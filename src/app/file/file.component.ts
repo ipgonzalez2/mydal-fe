@@ -14,6 +14,7 @@ export class FileComponent implements OnInit {
   files : File;
   @Input() fil : File;
   @Output() mostrarFichero = new EventEmitter<File>();
+  @Output() deleteFile = new EventEmitter<File>();
   hola : boolean;
   nameFile : string;
   shareFile : string;
@@ -47,9 +48,9 @@ export class FileComponent implements OnInit {
   }
 
   delete(){
-    this.fileService.delete(this.fil).subscribe(res => {
-      this.toastr.success("Fichero borrado correctamente");
-    })
+    console.log("noelia");
+    this.deleteFile.emit(this.fil)
+    
   }
 
 }

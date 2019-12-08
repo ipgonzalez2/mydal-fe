@@ -87,6 +87,16 @@ export class LeftMenuComponent implements OnInit {
      this.refresh();
     }
 
+    spanish() {
+      localStorage.setItem('locale', 'es');
+      window.location.reload();
+    }
+  
+    english() {
+      localStorage.setItem('locale', 'en');
+      window.location.reload();
+    }
+
     
 
 }

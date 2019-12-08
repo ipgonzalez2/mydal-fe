@@ -19,4 +19,14 @@ public user:User;
     this.auth.logout();
   }
 
+  spanish() {
+    localStorage.setItem('locale', 'es');
+    window.location.reload();
+  }
+
+  english() {
+    localStorage.setItem('locale', 'en');
+    window.location.reload();
+  }
+
 }

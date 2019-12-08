@@ -37,9 +37,6 @@ export class FileService {
     return this.http.get<File[]>(environment.apiUrl+'file/'+this.idFolder, { headers: this.headers });
   }
 
-  getFilesCreate() {
-    return this.http.get<File[]>(environment.apiUrl+'file/'+this.idFolder, { headers: this.headers });
-  }
 
   download(fileId: number, fileName : string) : void {
     this.http.get(environment.apiUrl+'file/download/'+fileId, { headers : {"userEmail" : JSON.parse(localStorage.getItem("currentUser")).email

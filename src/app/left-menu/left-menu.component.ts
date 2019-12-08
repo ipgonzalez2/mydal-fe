@@ -22,6 +22,7 @@ export class LeftMenuComponent implements OnInit {
   folder :Folder;
   foldersCenter : Folder[];
   filesCenter : File[];
+  folderBack :Folder;
   constructor(private folderService : FolderService, private toastr: ToastrService, private fileService : FileService,
   ) { 
     
@@ -44,6 +45,7 @@ export class LeftMenuComponent implements OnInit {
     
     ngOnInit() { 
       this.folder = new Folder();
+      this.folderBack = new Folder();
       this.foldersCenter = [];
       this.refresh();
       this.uploader.onAfterAddingFile = (file) => {
@@ -67,7 +69,7 @@ export class LeftMenuComponent implements OnInit {
       this.folderService.getFolders(this.folderService.idFolder).subscribe(
         data=> this.foldersCenter = data["response"]
       );
-      this.fileService.getFilesCreate()
+      this.fileService.getFiles(this.folderService.idFolder)
       .subscribe(
         data => this.filesCenter = data["response"]
       );
@@ -95,6 +97,21 @@ export class LeftMenuComponent implements OnInit {
     english() {
       localStorage.setItem('locale', 'en');
       window.location.reload();
+    }
+
+    back(){
+      if(this.folderService.idFolder != null){
+      this.folderService.getFoldersBack(this.folderService.idFolder).subscribe(
+        data=>{
+          this.folderBack = data["response"][0]
+          console.log(data["response"][0])
+          this.folderService.idFolder = this.folderBack.PADRE;
+          this.refresh();
+        } 
+        
+      );
+      }
+
     }
 
     

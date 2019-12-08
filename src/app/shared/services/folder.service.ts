@@ -40,5 +40,8 @@ export class FolderService {
   deleteFolder(folder:Folder){
     return this.http.post(environment.apiUrl+'folder/delete/', folder,{ headers: this.headers });
   }
+  getFoldersBack(id:number){
+    return this.http.get<Folder>(environment.apiUrl+'folder/back/'+this.idFolder,{ headers: this.headers });
+  }
 
 }

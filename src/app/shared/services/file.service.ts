@@ -47,11 +47,11 @@ export class FileService {
   }
 
   share(fileId : number, url:string) :Observable<any>{
-    return this.http.post(environment.apiUrl+'file/share/'+fileId, url, { headers :this.headers}); 
+    return this.http.post(environment.apiUrl+'file/shared/'+fileId, url, { headers :this.headers}); 
   }
 
   delete(file:File) : Observable<any>{
-    return this.http.post(environment.apiUrl+'file/delete/', file,{ headers: this.headers });
+    return this.http.delete(environment.apiUrl+'file/'+file.ID_FICHERO+'/'+file.NOMBRE,{ headers: this.headers });
   }
 
 }

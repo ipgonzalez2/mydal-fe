@@ -29,16 +29,16 @@ export class FolderService {
   getFolders(id:number) {
     // const userId=JSON.parse(localStorage.getItem('currentUser')).id;
     this.idFolder = id;
-    return this.http.get<Folder[]>(environment.apiUrl+'folder/'+this.idFolder, { headers: this.headers });
+    return this.http.get<Folder[]>(environment.apiUrl+'folder/showall/'+this.idFolder, { headers: this.headers });
   }
  
 
   createFolder(folder:Folder){
-    return this.http.post(environment.apiUrl+'folder/create/'+this.idFolder, folder,{ headers: this.headers });
+    return this.http.post(environment.apiUrl+'folder/'+this.idFolder, folder,{ headers: this.headers });
   }
 
   deleteFolder(folder:Folder){
-    return this.http.post(environment.apiUrl+'folder/delete/', folder,{ headers: this.headers });
+    return this.http.delete<Folder>(environment.apiUrl+'folder/'+folder.ID_CARPETA,{ headers: this.headers });
   }
   getFoldersBack(id:number){
     return this.http.get<Folder>(environment.apiUrl+'folder/back/'+this.idFolder,{ headers: this.headers });
